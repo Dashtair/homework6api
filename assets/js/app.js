@@ -42,33 +42,39 @@ $("#add-predator-button").on("click", function(e) {
 
 $(document).on("click", ".predator-button", function() {
 	var predator = $(this).attr("data-predator");
-	var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats"
+	var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + predator;
 	$.ajax({
 		url: queryURL,
 		method: "GET"
 	}).done(function(response) {
-		var result = response.data;
+		var results = response.data;
+		console.log(results);
 
-		var resultContainerSection = $("<section class='result-container'>");
+		var resultsContainerSection = $("<section class='result-container'>");
 
-		for (var i = 0; i < results.length; i++) {
-			var singleResultDiv = $("<div class= 'result-container'>");
+		results.fixed_height_small_url
+		var predatorImg = $("<img class='result'>");
+		predatorImg.attr("src", results.fixed_height_small_url);
+		resultsContainerSection.append(predatorImg);
 
-			var rating = results[i].rating;
+		// for (var i = 0; i < results.length; i++) {
+		// 	var singleResultDiv = $("<div class= 'result-container'>");
 
-			var p = $("<p>").text("Rating: " + rating);
+		// 	var rating = results[i].rating;
 
-			var predatorImg = $("<img class='result'>");
-			predator.attr("src", results[i].images.fixed_height_still.url);
-    		predator.attr("data-state", "still");
-    		predator.attr("data-still", results[i].images.fixed_height_still.url);
-    		predator.attr("data-animate", results[i].images.fixed_height.url);
+		// 	var p = $("<p>").text("Rating: " + rating);
 
-    		singleResultDiv.prepend(predatorImg);
-    		singleResultDiv.prepend(p);
+		// 	var predatorImg = $("<img class='result'>");
+		// 	predator.attr("src", results[i].images.fixed_height_still.url);
+  //   		predator.attr("data-state", "still");
+  //   		predator.attr("data-still", results[i].images.fixed_height_still.url);
+  //   		predator.attr("data-animate", results[i].images.fixed_height.url);
 
-    		resultsContainerSection.prepend(singleResultDiv);
-		}
+  //   		singleResultDiv.prepend(predatorImg);
+  //   		singleResultDiv.prepend(p);
+
+  //   		resultsContainerSection.prepend(singleResultDiv);
+		// }
 		$("#predators-group").prepend(resultsContainerSection);
 	});
 });
