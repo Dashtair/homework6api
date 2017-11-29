@@ -1,0 +1,85 @@
+body{
+	background: blue;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 69px;
+	margin-bottom: 15px;
+}
+
+small {
+	font-weight: normal;
+	font-size: 40px;
+}
+
+.wrapper {
+	margin: 60px 0 60px 60px;
+}
+
+.predator-button {
+	font-size: 14px;
+	background: grey;
+	border: none;
+	padding: 10px 15px;
+	margin: 6px;
+	border-radius: 10px;
+}
+
+.predor-button: hover, .predor-button:active{
+	background: #5c3836;
+	color: #fff;
+}
+
+#add-predator-button {
+	font-size: 14px;
+	color: #fff;
+	background: #009900;
+	border: none;
+	padding: 10px 15px;
+	margin: 6px;
+	border-radius: 10px;
+}
+
+#add-predaor-button:hover, #add-predator-button:active {
+	background: #00cc00;
+}
+
+#new-predator-input {
+	padding: 10px 15px;
+	font-size: 14px;
+	border: none;
+	border-radius: 10px;
+}
+
+#button-group {
+	margin-right: 20px;
+	margin-bottom: 15px;
+}
+
+.results-conteiner {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 30px;
+}
+
+.result {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.result: hover {
+	-webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow:    10px 10px 0px 0px rgba(0; 0; 0; 0.4);
+	box-shadow:  10px 10px 0px 0px rgba(0; 0; 0; 0.4);
+}
+
+p {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin: 0 0 6px 4px;
+}
